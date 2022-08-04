@@ -1,0 +1,244 @@
+.banner__wrapper {
+  height: auto;
+  padding-top: 15px;
+  padding-bottom: 15px; }
+
+.content__menu {
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px solid #e7e7e7;
+  background: #fff; }
+
+.content__list {
+  display: flex;
+  justify-content: space-between; }
+
+.content__section {
+  margin-right: 20px;
+  text-align: center;
+  display: inline-block; }
+
+.content__section:hover {
+  border-bottom: 4px solid #c81926; }
+
+.f0 {
+  height: 24px;
+  position: relative;
+  top: 5px; }
+
+.f0 a {
+  padding: 0 !important;
+  width: 215px;
+  height: 24px;
+  position: absolute;
+  background: url(/chuyen_de_co_so/assets/img/f0.webp) center center no-repeat;
+  background-size: contain; }
+
+.content__section a {
+  font-size: 15px;
+  line-height: 50px;
+  font-weight: 800;
+  color: #333;
+  text-decoration: none;
+  text-transform: uppercase; }
+
+.slider {
+  position: relative;
+  border-top: 1px solid #ebebeb;
+  padding-top: 35px; }
+
+.slider__tag {
+  top: 0;
+  left: 0;
+  background-color: #ff5e34;
+  position: absolute;
+  color: #fff;
+  font-size: 11px;
+  padding: 0 9px 0 7px;
+  line-height: 19px;
+  text-transform: uppercase; }
+
+.wrapper__column {
+  display: flex; }
+
+.column__item {
+  width: 320px;
+  margin-right: 20px; }
+
+.column__item-header {
+  margin-bottom: 10px;
+  position: relative;
+  height: 30px; }
+
+.item__header-tag {
+  width: 4px;
+  height: 20px;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  background: #ff6115;
+  content: ''; }
+
+.item__header-title {
+  font-size: 24px;
+  height: 30px;
+  line-height: 30px;
+  border-left: none;
+  padding-left: 15px;
+  font-weight: 500;
+  text-transform: uppercase; }
+
+.column__item-body-big {
+  height: 310px; }
+
+.column__item-body-big img {
+  width: 100%;
+  margin-bottom: 10px; }
+
+.column__item-body-big span {
+  font-size: 20px;
+  line-height: 24px;
+  color: #2d2d2d;
+  text-decoration: none;
+  font-weight: 500; }
+
+.column__item-body-small {
+  border-top: 1px solid #e9e9e9; }
+
+.column__item-body-small ul li a {
+  display: flex; }
+
+.column__item-body-small ul li {
+  padding: 12px 0; }
+
+.column__item-body-small ul li a img {
+  width: 60px;
+  height: 60px;
+  margin-right: 14px; }
+
+.column__item-body-small ul li a span {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px; }
+
+.wrapper__fund {
+  border: 1px solid #dedede;
+  border-top-color: #4165a0;
+  border-top-width: 3px;
+  border-radius: 4px;
+  box-shadow: 0 0 4px #646262; }
+
+.fund__header {
+  padding: 5px 10px 0;
+  margin-bottom: 5px; }
+
+.fund__title {
+  font-size: 16px;
+  color: #555;
+  text-transform: none;
+  line-height: 30px;
+  font-weight: 400; }
+
+.fund__body {
+  height: 436px;
+  overflow-y: scroll; }
+
+.fund__body::-webkit-scrollbar {
+  width: 0px; }
+
+.fund__items {
+  height: auto;
+  margin-bottom: 0;
+  width: auto;
+  margin: 0 10px; }
+
+.fund__items li a {
+  padding: 15px 0;
+  display: flex;
+  border-top: 1px solid #ececec; }
+
+.fund__items li a img {
+  width: 124px;
+  height: 78px;
+  margin-right: 14px; }
+
+.fund__items li a span {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px; }
+
+.horizontal {
+  border-top: none; }
+
+.lifestyle__wrapper {
+  border: 1px solid #e6e6e6; }
+
+.lifestyle__header {
+  background: #eee;
+  padding: 15px 0;
+  width: 100%;
+  position: relative; }
+
+.lifestyle__title1 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: bold;
+  padding-left: 8px;
+  border-left: 4px solid #ff6115;
+  color: #2d2d2d;
+  text-transform: uppercase;
+  position: relative;
+  margin-left: -1px;
+  height: 20px;
+  width: 60%; }
+
+.lifestyle__title2 {
+  font-size: 11px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  color: #888;
+  transform: translateY(-50%); }
+
+.trend__wrapper {
+  border-bottom: none; }
+
+.trend__wrapper-left {
+  height: 0; }
+
+.horizontal__news-link {
+  padding: 0; }
+
+.slider2 {
+  border-top: 5px solid #fb6c27;
+  background-color: #222; }
+
+.box2 {
+  background-color: #fff; }
+
+.slider__title {
+  margin-left: 60px;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 22px;
+  font-size: 24px;
+  font-weight: 400px; }
+
+.slider__title i {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: -2px;
+  left: -40px;
+  display: block;
+  color: #e56325;
+  font-size: 24px; }
+
+.content__body-img img {
+  margin-top: 24px;
+  margin-bottom: 20px; }
+
+.content__left-wrapper {
+  margin-bottom: 30px; }

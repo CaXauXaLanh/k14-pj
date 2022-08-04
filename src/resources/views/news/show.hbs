@@ -1,0 +1,222 @@
+<div class="banner__wrapper">
+            <div class="banner">
+                <img src="/image/banner.png" alt="">
+            </div>
+        </div>
+
+        <!-- content -->
+        <div class="w1040">
+            <div class="content__menu-wrapper ">
+                <div class="content__menu">
+                    <ul class="content__list content__wrapper">
+                        <div class="section__left">
+                            <li class="content__section">
+                                <a href="#" title="Xã Hội">Xã Hội</a>
+                            </li>
+                            <li class="content__section">
+                                <a href="#" title="Pháp Luật">Pháp Luật</a>
+                            </li>
+                            <li class="content__section">
+                                <a href="#" title="Nóng Trên Mạng">Nóng Trên Mạng</a>
+                            </li>
+                            <li class="content__section">
+                                <a href="#" title="Sống Xanh">Sống Xanh</a>
+                            </li>
+                            <li class="content__section f0">
+                                <a href="" title=""></a>
+                            </li>
+                        </div>
+                        <div class="section__right">
+                            <li class="content__section">
+                                <a href="#" title="Thế Giới Đó Đây">Thế Giới Đó Đây</a>
+                            </li>
+                            <li class="content__section">
+                                <a href="#" title="Đời Sống">Đời Sống</a>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            {{#with data1}}
+            <div class="content__wrapper">
+                <div class="content">
+                    <div class="content__left-wrapper">
+                        <div class="content__left-header">
+                            <h1 class="content__header-title">
+                                {{title}}
+                            </h1>
+                            <div class="content__header-info">
+                                <div class="content__header-author">
+                                    Tuấn Minh
+                                </div>
+                                <div class="content__header-time " title="20:33 15/06/2022">
+                                    <i class="fa-regular fa-clock"></i>
+                                    20:33 15/06/2022
+                                </div>
+                            </div>
+                            <div class="content__header-bottom">
+                                <div class="content__header-like">
+                                    <i class="fa-solid fa-thumbs-up"></i>
+                                    <span>Thích</span>
+                                </div>
+                                <div class="content__header-share">
+                                    <span>Chia sẻ</span>
+                                </div>
+                                <div class="content__header-save">
+                                    <i class="fa-solid fa-bookmark"></i>
+                                    Lưu vào Facebook
+                                </div>
+                                <div class="content__header-mail" title="gửi email">
+                                    <i class="fa-regular fa-envelope"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="content__left-body">
+                            <h2 class="content__left-h">
+                                {{description}}
+                            </h2>
+                            <div class="content__left-list">
+                                <ul>
+                                    <li><i class="fa-solid fa-circle content__icon"></i>
+                                        <a href=""
+                                            title="Vụ Chủ tịch xã bị đánh ghen tại trụ sở: Xác minh clip nhạy cảm">
+                                            Vụ Chủ tịch xã bị đánh ghen tại trụ sở: Xác minh clip nhạy cảm</a>
+                                    </li>
+                                    <li><i class="fa-solid fa-circle content__icon"></i>
+                                        <a href="" title="Chủ tịch xã bị đánh ghen tại công sở nói gì?">Chủ tịch xã bị
+                                            đánh ghen tại công sở nói gì?</a>
+                                    </li>
+                                    <li><i class=" fa-solid fa-circle content__icon"></i>
+                                        <a href="" title="Chủ tịch xã bị đánh ghen tại phòng làm việc">
+                                            Chủ tịch xã bị đánh ghen tại phòng làm việc
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            {{{content}}}
+                        </div>
+                        {{/with}}
+                        <div class="content__left-bottom">
+                            <div class="footer__menu ">
+                                <ul class="footer__menu-list">
+                                    <li class="footer__menu-list-items1"><a href="/xa-hoi" title="Xã hội">Xã hội</a>
+                                    </li>
+                                    <li class="footer__menu-list-items"><a href="/the-thao" title="Thể Thao">Thể
+                                            Thao</a>
+                                    </li>
+                                    <li class="footer__menu-list-items"><a href="/the-gioi" title="Thế Giới">Thế
+                                            Giới</a>
+                                    </li>
+                                    <li class="footer__menu-list-items"><a href="/kinh-te" title="Kinh Doanh">Kinh
+                                            Doanh</a>
+                                    </li>
+                                    <li class="footer__menu-list-items"><a href="/van-hoa" title="Văn Hoá">Văn
+                                            Hoá</a></li>
+                                </ul>
+                            </div>
+                            <div class="content__left-bottom-hastag">
+                                <a href="">
+                                    <span>#Văn Hoá</span>
+                                </a>
+                                <a href="">
+                                    <span>#Thể Thao</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="content__left-more">
+                            <div class="more__header">
+                                <div class="more__tag">
+
+                                </div>
+                                <span class="more__title">Đọc Thêm</span>
+                            </div>
+                            <div class="horizontal">
+                                {{#each_from_to data2 0 2}}
+                                <ul class="horizontal__news-list">
+                                    <li class="horizontal__news-items">
+                                        <a href="/{{this.tag}}/{{this.slug}}" class="horizontal__news-link">
+                                            <img src=/{{this.image}} alt=""
+                                                class="header__notify-img">
+                                            <div class="horizontal__news-info">
+                                                <span class="horizontal__news-name">{{this.title}}</span>
+                                                <span class="horizontal__news-content">{{this.description}}</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                {{/each_from_to}}
+                            </div>
+                            <div class="slider">
+                                <div class="slider__tag">
+                                    <span>Tiêu điểm tuần</span>
+                                </div>
+                                <div class="slider-nav">
+                                    <i class='bx bx-chevron-left btnLeft'></i>
+                                    <i class='bx bx-chevron-right btnRight'></i>
+                                </div>
+
+                                <div class="slider-box">
+                                    {{#each_from_to data2 3 5}}
+                                    <div class="box">
+                                        <a href="/{{this.tag}}/{{this.slug}}">
+                                            <img src="/{{this.image}}" alt="">
+                                            <p style="color = white">{{this.title}}</p>
+                                        </a>
+                                        
+                                    </div>
+                                    {{/each_from_to}}
+                                    <div class="box">
+                                        <img src="./assets/img/KOC4.png" alt="">
+                                        <p>KOC VIETNAM 2022 - mùa 1 không chỉ là những con số kỷ lục"</p>
+                                    </div>
+
+                                    <div class="box">
+                                        <img src="./assets/img/chidan5.png" alt="">
+                                        <p>"Phỏng vấn Chi Dân: "Tôi và Trương Quỳnh Anh chỉ là bạn"</p>
+                                    </div>
+                                    <div class="box">
+                                        <img src="./assets/img/u23vn.png" alt="">
+                                        <p>Khiến U23 Thái Lan toát mồ hôi bám đuổi, U23 Việt Nam đánh rơi 3 điểm tiếc
+                                            nuối ở
+                                            phút bù
+                                            giờ</p>
+                                    </div>
+                                </div>
+                                <div style="text-align:center">
+                                    <span class="dot active" onclick="plusSlides(0)"></span>
+                                    <span class="dot" onclick="plusSlides(1)"></span>
+                                    <span class="dot" onclick="plusSlides(2)"></span>
+                                    <span class="dot" onclick="plusSlides(3)"></span>
+                                </div>
+                            </div>
+
+                            <div class="horizontal">
+                                {{#each_from_to data2 6 10}}
+                                <ul class="horizontal__news-list">
+                                    <li class="horizontal__news-items">
+                                        <a href="/{{this.tag}}/{{this.slug}}" class="horizontal__news-link">
+                                            <img src="/{{this.image}}" alt=""
+                                                class="header__notify-img">
+                                            <div class="horizontal__news-info">
+                                                <span class="horizontal__news-name">{{this.title}}</span>
+                                                <span class="horizontal__news-content">{{this.description}}</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                {{/each_from_to}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content__right-wrapper">
+                        <div class="content__body-img">
+                            <img src="/image/banner1.png" alt="">
+                            <img src="/image/banner1.png" alt="">
+                            <img src="/image/banner1.png" alt="">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

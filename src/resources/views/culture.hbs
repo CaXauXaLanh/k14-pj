@@ -1,0 +1,348 @@
+<div class="main">
+        <!-- content -->
+        <div class="content">
+            <div class="content__left-wrapper">
+                
+                <div class="content__body-list">
+                    {{#with data1.[0]}}
+                    <div class="content__body-item item1">
+                        <img src="/{{image}}" alt="">
+                        <a href="/{{tag}}/{{slug}}">{{title}}</a>
+                        <p>{{description}}</p>
+                    </div>
+                    {{/with}}
+                    {{#with data1.[1]}}
+                    <div class="content__body-item item2">
+                        <img src="/{{image}}" alt="">
+                        <div>
+                            <a href="/{{tag}}/{{slug}}">NÓNG: {{title}}</a>
+                        </div>
+                    </div>
+                    {{/with}}
+                </div>
+
+                <div class="slider">
+                    <div class="slider__tag">
+                        <span>Tiêu điểm tuần</span>
+                    </div>
+                    <div class="slider-nav">
+                        <i class='bx bx-chevron-left btnLeft'></i>
+                        <i class='bx bx-chevron-right btnRight'></i>
+                    </div>
+
+                    <div class="slider-box">
+                        {{#each_from_to data1 2 4}}
+                        <div class="box">
+                            <a href="/{{this.tag}}/{{this.slug}}">
+                                <img src="/{{this.image}}" alt="">
+                                <p>{{this.title}}</p>
+                            </a>
+                            
+                        </div>
+                        {{/each_from_to}}
+                        <div class="box">
+                            <img src="./assets/img/KOC4.png" alt="">
+                            <p>KOC VIETNAM 2022 - mùa 1 không chỉ là những con số kỷ lục"</p>
+                        </div>
+
+                        <div class="box">
+                            <img src="./assets/img/chidan5.png" alt="">
+                            <p>"Phỏng vấn Chi Dân: "Tôi và Trương Quỳnh Anh chỉ là bạn"</p>
+                        </div>
+                        <div class="box">
+                            <img src="./assets/img/u23vn.png" alt="">
+                            <p>Khiến U23 Thái Lan toát mồ hôi bám đuổi, U23 Việt Nam đánh rơi 3 điểm tiếc nuối ở phút bù
+                                giờ</p>
+                        </div>
+                    </div>
+                    <div style="text-align:center">
+                        <span class="dot active" onclick="plusSlides(0)"></span>
+                        <span class="dot" onclick="plusSlides(1)"></span>
+                        <span class="dot" onclick="plusSlides(2)"></span>
+                        <span class="dot" onclick="plusSlides(3)"></span>
+                    </div>
+                </div>
+
+                <div class="horizontal">
+                    {{#each_from_to data1 5 10}}
+                    <ul class="horizontal__news-list">
+                        <li class="horizontal__news-items">
+                            <a href="/{{this.tag}}/{{this.slug}}" class="horizontal__news-link">
+                                <img src="/{{this.image}}" alt="" class="header__notify-img">
+                                <div class="horizontal__news-info">
+                                    <span class="horizontal__news-name">{{this.title}}</span>
+                                    <span class="horizontal__news-content">{{this.description}}</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    {{/each_from_to}}
+                </div>
+            </div>
+            <div class="content__right-wrapper">
+                <div class="content__body-img">
+                    <img src="/image/banner1.png" alt="">
+                    <img src="/image/banner1.png" alt="">
+                    <img src="/image/banner1.png" alt="">
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Trend -->
+        <div class="trend__wrapper">
+            <div class="trend__wrapper-left ">
+                <div class="wrapper__column">
+                    <div class="column__item">
+                        <div class="column__item-header">
+                            <div class="item__header-tag">
+
+                            </div>
+                            <div class="item__header-title">
+                                Tin tức kinh tế
+                            </div>
+                        </div>
+                        <div class="column__item-body">
+                            {{#with data2.[0]}}
+                            <div class="column__item-body-big">
+                                <a href="/{{tag}}/{{slug}}">
+                                    <img src="/{{image}}"
+                                        alt="{{title}}">
+                                    <span>{{title}}</span>
+                                </a>
+                            </div>
+                            {{/with}}
+                            {{#each_from_to data2 1 2}}
+                            <div class="column__item-body-small">
+                                <ul>
+                                    <li>
+                                        <a href="/{{this.tag}}/{{this.slug}}">
+                                            <img src="/{{this.image}}"
+                                                alt="/{{this.title}}">
+                                            <span>{{this.title}}</span>
+                                        </a>
+                                    </li>
+                            </div>
+                            {{/each_from_to}}
+                        </div>
+                    </div>
+
+                    <div class="column__item">
+                        <div class="column__item-header">
+                            <div class="item__header-tag">
+
+                            </div>
+                            <div class="item__header-title">
+                                Thế giới đó đây
+                            </div>
+                        </div>
+                        <div class="column__item-body">
+                            {{#with data3.[0]}}
+                            <div class="column__item-body-big">
+                                <a href="/{{tag}}/{{slug}}">
+                                    <img src="/{{image}}"
+                                        alt="{{title}}">
+                                    <span>{{title}}</span>
+                                </a>
+                            </div>
+                            {{/with}}
+                            {{#each_from_to data3 1 2}}
+                            <div class="column__item-body-small">
+                                <ul>
+                                    <li>
+                                        <a href="/{{this.tag}}/{{this.slug}}">
+                                            <img src="/{{this.image}}"
+                                                alt="{{this.title}}">
+                                            <span>{{this.title}}</span>
+                                        </a>
+                                    </li>
+                            </div>
+                            {{/each_from_to}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="trend__wrapper-right">
+                <div class="wrapper__fund">
+                    <div class="fund__header">
+                        <div class="fund__title">
+                            Được tài trợ
+                        </div>
+                    </div>
+                    <div class="fund__body">
+                        <ul class="fund__items">
+                            <li>
+                                <a href="#">
+                                    <img src="https://kenh14cdn.com/zoom/130_82/pr/2022/photo1655126652184-16551266525031600113992-63790753169563.jpg"
+                                        alt="">
+                                    <span>Rút ngắn 30 ngày thử việc chỉ còn 1 giờ trải nghiệm The Banca Game</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://kenh14cdn.com/zoom/130_82/pr/2022/photo1655126652184-16551266525031600113992-63790753169563.jpg"
+                                        alt="">
+                                    <span>Rút ngắn 30 ngày thử việc chỉ còn 1 giờ trải nghiệm The Banca Game</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://kenh14cdn.com/zoom/130_82/pr/2022/photo1655126652184-16551266525031600113992-63790753169563.jpg"
+                                        alt="">
+                                    <span>Rút ngắn 30 ngày thử việc chỉ còn 1 giờ trải nghiệm The Banca Game</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://kenh14cdn.com/zoom/130_82/pr/2022/photo1655126652184-16551266525031600113992-63790753169563.jpg"
+                                        alt="">
+                                    <span>Rút ngắn 30 ngày thử việc chỉ còn 1 giờ trải nghiệm The Banca Game</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://kenh14cdn.com/zoom/130_82/pr/2022/photo1655126652184-16551266525031600113992-63790753169563.jpg"
+                                        alt="">
+                                    <span>Rút ngắn 30 ngày thử việc chỉ còn 1 giờ trải nghiệm The Banca Game</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://kenh14cdn.com/zoom/130_82/pr/2022/photo1655126652184-16551266525031600113992-63790753169563.jpg"
+                                        alt="">
+                                    <span>Rút ngắn 30 ngày thử việc chỉ còn 1 giờ trải nghiệm The Banca Game</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://kenh14cdn.com/zoom/130_82/pr/2022/photo1655126652184-16551266525031600113992-63790753169563.jpg"
+                                        alt="">
+                                    <span>Rút ngắn 30 ngày thử việc chỉ còn 1 giờ trải nghiệm The Banca Game</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://kenh14cdn.com/zoom/130_82/pr/2022/photo1655126652184-16551266525031600113992-63790753169563.jpg"
+                                        alt="">
+                                    <span>Rút ngắn 30 ngày thử việc chỉ còn 1 giờ trải nghiệm The Banca Game</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://kenh14cdn.com/zoom/130_82/pr/2022/photo1655126652184-16551266525031600113992-63790753169563.jpg"
+                                        alt="">
+                                    <span>Rút ngắn 30 ngày thử việc chỉ còn 1 giờ trải nghiệm The Banca Game</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://kenh14cdn.com/zoom/130_82/pr/2022/photo1655126652184-16551266525031600113992-63790753169563.jpg"
+                                        alt="">
+                                    <span>Rút ngắn 30 ngày thử việc chỉ còn 1 giờ trải nghiệm The Banca Game</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- content2 -->
+        <div class="content">
+            <div class="content__left-wrapper">
+
+                <div class="slider2">
+                    <div class="slider__title">
+                        đừng bỏ lỡ
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="slider-nav">
+                        <i class="bx bx-chevron-left btnLeft2"></i>
+                        <i class="bx bx-chevron-right btnRight2"></i>
+                    </div>
+
+                    <div class="slider-box2">
+                        {{#each_from_to data2 3 8}}
+                        
+                        <div class="box2">
+                            <a href="/{{this.tag}}/{{this.slug}}">
+                                <img src="/{{this.image}}" alt="">
+                                <p>{{this.title}}</p>
+                            </a>
+                        </div>
+                        {{/each_from_to}}
+                    </div>
+                    <div style="text-align:center">
+                        <span class="dot2 active" onclick="plusSlides(0)"></span>
+                        <span class="dot2" onclick="plusSlides(1)"></span>
+                        <span class="dot2" onclick="plusSlides(2)"></span>
+                        <span class="dot2" onclick="plusSlides(3)"></span>
+                    </div>
+                </div>
+
+                <div class="horizontal">
+                    {{#each_from_to data3 3 7}}
+                    <ul class="horizontal__news-list">
+                        <li class="horizontal__news-items">
+                            <a href="/{{this.tag}}/{{this.slug}}" class="horizontal__news-link">
+                                <img src="/{{this.image}}" alt="" class="header__notify-img">
+                                <div class="horizontal__news-info">
+                                    <span class="horizontal__news-name">{{this.title}}</span>
+                                    <span class="horizontal__news-content">{{this.description}}</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    {{/each_from_to}}
+                </div>
+            </div>
+            <div class="content__right-wrapper">
+                <div class="lifestyle__wrapper-right">
+                    <div class="lifestyle__wrapper">
+
+                        <div class="lifestyle__header">
+                            <div class="lifestyle__title1">
+                                câu chuyện cuộc sống
+                            </div>
+                            <div class="lifestyle__title2">
+                                Được tài trợ
+                            </div>
+                        </div>
+
+                        <div class="lifestyle__body">
+                            <ul class="fund__items">
+                                <li>
+                                    <a href="#">
+                                        <img src="https://kenh14cdn.com/zoom/130_82/pr/2022/photo1655126652184-16551266525031600113992-63790753169563.jpg"
+                                            alt="">
+                                        <span>Rút ngắn 30 ngày thử việc chỉ còn 1 giờ trải nghiệm The Banca Game</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="https://kenh14cdn.com/zoom/130_82/pr/2022/photo1655126652184-16551266525031600113992-63790753169563.jpg"
+                                            alt="">
+                                        <span>Rút ngắn 30 ngày thử việc chỉ còn 1 giờ trải nghiệm The Banca Game</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="https://kenh14cdn.com/zoom/130_82/pr/2022/photo1655126652184-16551266525031600113992-63790753169563.jpg"
+                                            alt="">
+                                        <span>Rút ngắn 30 ngày thử việc chỉ còn 1 giờ trải nghiệm The Banca Game</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="content__body-img">
+                    <img src="./assets/img/banner1.png" alt="">
+                </div>
+            </div>
+        </div>
+ 
+        </div>
+    </div>
