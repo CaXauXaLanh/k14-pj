@@ -22,16 +22,6 @@ class SiteController {
     //         })
     //         .catch(next)
     // }
-    index(req,res,next) {
-        Hot.find({})
-            .then (hot => {
-                res.render('home', {
-                    hot: mutipleMongooseToObject(hot),
-                    layout: 'main'
-                })
-            })
-            .catch(next)
-    }
 
     index(req, res) {
         Business.find({limit: 5}, function(err, data1) {
