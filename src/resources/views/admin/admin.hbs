@@ -1,0 +1,70 @@
+{{!-- <div class="mt-4">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Username</th>
+      <th scope="col">Password</th>
+      <th scope="col" colspan="2">Admin</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each data}}
+    <tr>
+      <th scope="row">{{sum @index 1}}</th>
+      <td>{{this.username}}</td>
+      <td>{{this.password}}</td>
+      <td>{{this.admin}}</td>
+      <td>
+        <a href="/admin/deleteuser/{{this._id}}" id="#delete-user">Xóa người dùng</a>
+      </td>
+    </tr>
+      {{/each}}
+  </tbody>
+</table>
+</div> --}}
+
+<nav class="nav__bar">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <ul class="nav__menu">
+          <li class="nav__menu-item"><a href="/admin/article">Quản Lý Bài
+              Viết</a></li>
+          <li class="nav__menu-item"><a href="/logout">Đăng Xuất</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="main">
+  <div class="container">
+    <table>
+      <thead>
+        <tr>
+          <th class="table__rank">Số Thứ Tự</th>
+          <th class="table__user-name">Tên Người Dùng</th>
+          <th class="table__password">Mật Khẩu</th>
+          <th class="table__check">Admin</th>
+          <th class="table__control">Thao Tác</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each data}}
+        <tr>
+          <td class="table__rank">{{sum @index 1}}</td>
+          <td class="table__user-name"><i class="fa-solid fa-user"></i>
+            {{this.username}}
+          </td>
+          <td class="table__password">{{this.password}}</td>
+          <td class="table__check">{{this.admin}}</td>
+          <td class="table__delete-user">
+            <a href="/admin/deleteuser/{{this._id}}" id="#delete-user">Xóa người dùng</a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</main>

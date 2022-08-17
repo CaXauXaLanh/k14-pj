@@ -4,9 +4,12 @@ const worldRouter = require('./world')
 const businessRouter = require('./business')
 const sportRouter = require('./sport')
 const cultureRouter = require('./culture')
+const authRouter = require('./auth')
+const adminRouter = require('./admin')
 
 function route(app) {
 
+    app.use('/admin', adminRouter)
     app.use('/van-hoa', cultureRouter)
     app.use('/the-thao', sportRouter)
     app.use('/kinh-te', businessRouter)

@@ -1,17 +1,16 @@
-const {Social} = require('../models/News')
-const {World} = require('../models/News')
-const {Culture} = require('../models/News')
+
+const {Business} = require('../models/News')
 const { mutipleMongooseToObject } = require('../../util/mongoose')
 const { mongooseToObject } = require('../../util/mongoose')
 
 class SocialController{
     //GET /social/:slug
     show(req,res) {
-        Social.findOne({slug : req.params.slug }, function( err, data1){
+        Business.findOne({slug : req.params.slug }, function( err, data1){
             if(err){
                 console.log(err)
             }else{
-                Social.find({}, function(err, data2){
+                Business.find({tag: 'xa-hoi'}, function(err, data2){
                     if(err){
                         console.log(err)
                     }else{
@@ -37,19 +36,19 @@ class SocialController{
     //         .catch(next) ;
     // }
     index (req, res) {
-        Social.find({}, function(err, data1){
+        Business.find({tag: 'xa-hoi'}, function(err, data1){
             if(err){
                 console.log(err)
             }else{
-                Culture.find({}, function(err, data2){
+                Business.find({tag:' van-hoa'}, function(err, data2){
                     if(err){
                         console.log(err)
                     }else{
-                        World.find({}, function(err, data3){
+                        Business.find({tag: 'the-gioi'}, function(err, data3){
                             if(err) {
                                 console.log(err)
                             }else{
-                                res.render('social', {
+                                res.render('tag/social', {
                                     title: "Xã hội",
                                     layout: 'tag',
                                     data1: mutipleMongooseToObject(data1),

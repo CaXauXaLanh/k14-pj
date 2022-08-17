@@ -1,0 +1,8 @@
+<ul class="list-login">
+    {{#if admin}}
+        <a href="/admin"><li class="btn__username-logged login-item">{{username1}}</li></a>
+    {{else}}
+        <li class="btn__username-logged login-item">{{username1}}</li>
+    {{/if}}
+    <a href="/logout"><li class="btn__logout login-item">Đăng xuất</li></a>
+</ul>

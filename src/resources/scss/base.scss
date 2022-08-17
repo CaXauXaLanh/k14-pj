@@ -1,74 +1,320 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 :root {
-    --white-color: #fff;
-    --black-color: #000;
-    --text-color: #333;
-
+  --white-color: #fff;
+  --black-color: #000;
+  --text-color: #333;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
-	font-size: 16px;
-	font-family: 'Roboto', sans-serif;	
-	height: 4500px;
+  line-height: 1;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  height: 4500px;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 a {
-	color: #333;
-	transition: all linear 0.175s;
+  color: #333;
+  transition: all linear 0.175s;
 }
 * {
-    box-sizing: inherit;
-    border: none;
-    text-decoration: none;
+  box-sizing: inherit;
+  border: none;
+  text-decoration: none;
 }
 .fa-angle-right {
-	font-size: 14px;
+  font-size: 14px;
 }
 
 .grid-col-3 {
-	width: 25%;
-	padding: 0 15px;
-	box-sizing: border-box;
+  width: 25%;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
-.grid{
-	width: 1200px;
-	max-width: 100% ;
+.grid {
+  width: 1200px;
+  max-width: 100%;
+}
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes growth {
+  from {
+    transform: scale(var(--growth-from));
+  }
+  to {
+    transform: scale(var(--growth-to));
+  }
+}
+/* Modal */
+.modal__container.show {
+  opacity: 1;
+  pointer-events: all;
+}
+.modal__container2.show {
+  opacity: 1;
+  pointer-events: all;
+}
+.modal__container,
+.modal__container2 {
+  opacity: 0;
+  pointer-events: none;
+}
+.modal {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  /* animation: fadeIn linear 0.2s; */
+}
+.modal__container.show .modal,
+.modal__container2.show .modal {
+  animation: fadeIn linear 0.2s;
+}
+.modal__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 889;
+}
+.modal__body {
+  margin: auto;
+  z-index: 900;
+  position: relative;
+  animation: growth linear 0.2s;
+}
+#modal__container.show .modal__body,
+#modal__container2.show .modal__body {
+  --growth-from: 0.7;
+  --growth-to: 1;
+}
+.btn {
+  min-width: 142px;
+  min-height: 36px;
+  border-radius: 4px;
+  font-size: 1rem;
+  padding: 0;
+  cursor: pointer;
+  color: var(--text-color);
+  background-color: var(--white-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn.btn-normal:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.btn.btn--size-s {
+  height: 32px;
+  font-size: 12px;
+}
+.btn.btn--primary {
+  background-color: #a70e1a;
+  color: var(--white-color);
+}
+.container {
+  width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+img {
+  /* giới hạn kích thước trong vùng chứa */
+  max-width: 100%;
+  /* loại bỏ phần chân dòng (khoảng trắng nhỏ ở dưới hình ảnh) */
+  vertical-align: middle;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* loại bỏ khoảng trống 2 cột ngoài cùng */
+  margin-left: -5px;
+  margin-right: -5px;
+  /* tạo khoảng cách giữa các hàng */
+  row-gap: 10px;
+}
+/* nếu muốn khoảng trống ở giữ 2 phần tử = 10px , => padding-left: 5px; padding-right:5px; */
+.row > * {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+/* độ rộng 1 cột */
+.col-1 {
+  flex: 0 1 8.33333333%;
+}
+/* độ rộng bằng 2 cột */
+.col-2 {
+  flex: 0 1 16.666667%;
+}
+
+/* độ rộng bằng 3 cột */
+.col-3 {
+  flex: 0 1 25%;
+}
+/* độ rộng bằng 4 cột */
+.col-4 {
+  flex: 0 1 33.333333%;
+}
+/* độ rộng bằng 5 cột */
+.col-5 {
+  flex: 0 1 41.666667%;
+}
+/* độ rộng bằng 6 cột */
+.col-6 {
+  flex: 0 1 50%;
+}
+/* độ rộng bằng 7 cột */
+.col-7 {
+  flex: 0 1 58.333333%;
+}
+/* độ rộng bằng 8 cột */
+.col-8 {
+  flex: 0 1 66.666667%;
+}
+/* độ rộng bằng 9 cột */
+.col-9 {
+  flex: 0 1 75%;
+}
+/* độ rộng bằng 10 cột */
+.col-10 {
+  flex: 0 1 83.333333%;
+}
+/* độ rộng bằng 11 cột */
+.col-11 {
+  flex: 0 1 91.666667%;
+}
+/* độ rộng bằng 12 cột */
+.col-12 {
+  flex: 0 1 100%;
 }

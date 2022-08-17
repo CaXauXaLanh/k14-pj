@@ -154,18 +154,17 @@
   font-size: 17px;
   line-height: 25px;
   color: #222;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   margin-bottom: 25px; }
 
-.content__left-body img {
-  max-width: 662px; }
+.content__left-body-img img {
+  width: 100%; }
 
 .content__body-img-caption {
   display: block;
   background: #f2f2f2;
   padding: 10px;
-  text-align: center;
-  font-family: SFD-Medium;
+  text-align: left;
   box-sizing: border-box; }
 
 .content__left-body-img p {
@@ -191,7 +190,7 @@
   background: #ebebeb;
   color: #555;
   border-radius: 3px;
-  transition: background .3s, color .3s; }
+  transition: background 0.3s, color 0.3s; }
 
 .content__left-more {
   margin-top: 20px; }
@@ -217,8 +216,7 @@
   top: 5px;
   left: 0;
   background: #ff6115;
-  content: ''; }
+  content: ""; }
 
 .slider {
-  border-top: 5px solid #fb6c27;
-  background-color: #222; }
+  border-top: 5px solid #fb6c27; }

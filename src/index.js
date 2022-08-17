@@ -1,4 +1,5 @@
 const path = require('path')
+const cookieParser = require('cookie-parser')
 const express = require('express')
 const { engine } = require("express-handlebars");
 const { dirname } = require('path');
@@ -6,10 +7,19 @@ const app = express()
 const port = 3000
 const route = require('./routes')
 const db = require("./config/db")
+const cors = require('cors')
+const mongoose = require('mongoose')
+const helpers = require('handlebars-helpers')();
 
+app.use(express.urlencoded());
+app.use(cookieParser())
+app.use(cors())
+app.use(express.json())
 //connect db
-db.connect()
-
+// db.connect()
+mongoose.connect('mongodb://localhost:27017/news-Web',() => {
+    console.log('Conenct thanh cong')
+})
 //cau hinh file tinh
 app.use(express.static(path.join(__dirname,'/public/')));
 
@@ -33,6 +43,9 @@ app.engine('hbs', engine({
       for (var i = min; i <= max && i < ary.length; i++)
         result.push(options.fn(ary[i]));
       return result.join('');
+    },
+    sum: (a, b) => {
+      return a + b
     }
   },
 }))
