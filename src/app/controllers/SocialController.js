@@ -1,7 +1,8 @@
-
 const {Business} = require('../models/News')
-const { mutipleMongooseToObject } = require('../../util/mongoose')
-const { mongooseToObject } = require('../../util/mongoose')
+const User = require('../models/User')
+const {mutipleMongooseToObject} = require('../../util/mongoose')
+const {mongooseToObject} = require('../../util/mongoose')
+const jwt = require('jsonwebtoken')
 
 class SocialController{
     //GET /social/:slug
@@ -14,27 +15,37 @@ class SocialController{
                     if(err){
                         console.log(err)
                     }else{
-                        res.render('news/show', {
-                            layout: 'news',
-                            data1: mongooseToObject(data1), 
-                            data2: mutipleMongooseToObject(data2)
-                        })
+                        if (req.cookies.accessToken) {
+                            const cookie = req.cookies.accessToken
+                            const decode = jwt.verify(cookie, 'secretkey')
+                            const userId = decode.id
+                            User.findOne({_id: userId}, function(err, user) {
+                                if(err) {
+                                    console.log(err)
+                                } else {
+                                    res.render('news/show', {
+                                        admin: user.admin,
+                                        username1: user.username,
+                                        layout: 'news',
+                                        data1: mongooseToObject(data1), 
+                                        data2: mutipleMongooseToObject(data2)
+                                    }
+                                )}
+                            })
+                        } else {
+                            res.render('news/show', {
+                                layout: 'news',
+                                data1: mongooseToObject(data1), 
+                                data2: mutipleMongooseToObject(data2)
+                            })
+                        }
+                        
                     }
                 })
             }
         }) 
     }
 
-    //GET /social
-    // index ( req, res, next) {
-    //     Social.find ({})
-    //         .then (data => {
-    //             res.render( 'social', { 
-    //                 data: mutipleMongooseToObject(data)
-    //             })
-    //         })    
-    //         .catch(next) ;
-    // }
     index (req, res) {
         Business.find({tag: 'xa-hoi'}, function(err, data1){
             if(err){
@@ -48,13 +59,35 @@ class SocialController{
                             if(err) {
                                 console.log(err)
                             }else{
-                                res.render('tag/social', {
+                                if (req.cookies.accessToken) {
+                                    const cookie = req.cookies.accessToken
+                                    const decode = jwt.verify(cookie, 'secretkey')
+                                    const userId = decode.id
+                                    User.findOne({_id: userId}, function(err, user) {
+                                        if(err) {
+                                            console.log(err)
+                                        } else {
+                                            res.render('tag/tagPage', {
+                                                admin: user.admin,
+                                                username1: user.username,
+                                                title: 'Văn hoá',
+                                                layout: 'tag',
+                                                data1: mutipleMongooseToObject(data1),
+                                                data2: mutipleMongooseToObject(data2),
+                                                data3: mutipleMongooseToObject(data3),
+                                            }
+                                        )}
+                                    })
+                                } else {
+                                    res.render('tag/tagPage', {
                                     title: "Xã hội",
                                     layout: 'tag',
                                     data1: mutipleMongooseToObject(data1),
                                     data2: mutipleMongooseToObject(data2),
                                     data3: mutipleMongooseToObject(data3),
                                 })
+                                }
+                                
                             }
                         })
                     }

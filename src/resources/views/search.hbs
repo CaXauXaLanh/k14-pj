@@ -1,0 +1,15 @@
+<div class="horizontal">
+  {{#each data}}
+    <ul class="horizontal__news-list">
+      <li class="horizontal__news-items">
+        <a href="/{{this.tag}}/{{this.slug}}" class="horizontal__news-link">
+          <img src="{{this.image}}" alt="" class="header__notify-img" />
+          <div class="horizontal__news-info">
+            <span class="horizontal__news-name">{{this.title}}</span>
+            <span class="horizontal__news-content">{{this.description}}</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  {{/each}}
+</div>

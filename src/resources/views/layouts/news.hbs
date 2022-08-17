@@ -59,44 +59,54 @@
                 >
               </div>
 
-              <div class="auth-form__form">
-                <div class="auth-form__group">
-                  <input
-                    type="text"
-                    class="auth-form__input"
-                    placeholder="Email của bạn"
-                  />
+              <form method ="post" action="/register" id="form-1">
+                <div class="auth-form__form">
+                  <div class="auth-form__group">
+                    <input
+                      type="text"
+                      class="auth-form__input"
+                      name="username"
+                      id = "username"
+                      placeholder="Username"
+                    />
+                  </div>
+                  <div class="auth-form__group">
+                    <input
+                      type="password"
+                      class="auth-form__input"
+                      name = "password"
+                      id = "password"
+                      placeholder="Mật khẩu của bạn"
+                    />
+                  </div>
+                  <div class="auth-form__group">
+                    <input
+                      type="password"
+                      class="auth-form__input"
+                      name = "retypepass"
+                      id = "retypepass"
+                      placeholder="Nhập lại mật khẩu"
+                    />
+                  </div>
                 </div>
-                <div class="auth-form__group">
-                  <input
-                    type="password"
-                    class="auth-form__input"
-                    placeholder="Mật khẩu của bạn"
-                  />
+                <div class="auth-form__aside">
+                  <p class="auth-form__policy-text">
+                    Bằng việc đăng kí, bạn đã đồng ý với News về
+                    <a href="#">Điều khoản dịch vụ </a>&
+                    <a href="#">Chính sách bảo mật</a>
+                  </p>
                 </div>
-                <div class="auth-form__group">
-                  <input
-                    type="password"
-                    class="auth-form__input"
-                    placeholder="Nhập lại mật khẩu"
-                  />
+                <div class="auth-form__controls">
+                  
+                  <button class="btn btn--primary" onclick="alert('dang ky thanh cong')">ĐĂNG KÝ</button>
+                  
                 </div>
-              </div>
-              <div class="auth-form__aside">
-                <p class="auth-form__policy-text">
-                  Bằng việc đăng kí, bạn đã đồng ý với News về
-                  <a href="#">Điều khoản dịch vụ </a>&
-                  <a href="#">Chính sách bảo mật</a>
-                </p>
-              </div>
-              <div class="auth-form__controls">
-                <button
-                  class="btn__close-auth btn btn-normal auth-form__controls-back"
-                >
-                  TRỞ LẠI
-                </button>
-                <button class="btn btn--primary">ĐĂNG KÝ</button>
-              </div>
+              </form>
+              <button
+                    class="btn__close-auth btn btn-normal auth-form__controls-back"
+                  >
+                    TRỞ LẠI
+              </button>
             </div>
             <div class="auth-form__sns">
               <a
@@ -132,30 +142,37 @@
                 >
               </div>
 
-              <div class="auth-form__form">
+              <form action="/login" method = "post">
+                <div class="auth-form__form">
                 <div class="auth-form__group">
                   <input
                     type="text"
                     class="auth-form__input"
+                    name="username"
+                    id="username"
                     placeholder="Email / Tên đăng nhập"
                   />
                 </div>
                 <div class="auth-form__group">
                   <input
                     type="password"
+                    name="password"
+                    id="password"
                     class="auth-form__input"
                     placeholder="Mật khẩu của bạn"
                   />
                 </div>
               </div>
               <div class="auth-form__controls auth-form-login">
-                <button
+                
+                <button class="btn btn--primary"  onclick="alert('dang nhap thanh cong')">ĐĂNG NHẬP</button>
+              </div>
+              </form>
+              <button
                   class="btn btn-normal auth-form__controls-back btn__close-login"
                 >
                   TRỞ LẠI
                 </button>
-                <button class="btn btn--primary">ĐĂNG NHẬP</button>
-              </div>
             </div>
             <div class="auth-form__sns">
               <a

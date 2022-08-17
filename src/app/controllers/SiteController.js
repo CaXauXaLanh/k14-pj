@@ -43,11 +43,34 @@ class SiteController {
     //[GET] /timkiem/:params
     timkiem(req, res, next) {
         const searchField = req.query.name
-        Business.find({title: new RegExp(searchField,'i')})
-            .then(data => {
-                res.send(data)
-            })
+        Business.find({title: new RegExp(searchField,'i')}, function(err, data) {
+            if (err) {
+                console.log(err)
+            } else {
+                if (req.cookies.accessToken) {
+                    const cookie = req.cookies.accessToken
+                    const decode = jwt.verify(cookie, 'secretkey')
+                    const userId = decode.id
+                    User.findOne({_id: userId}, function(err, user) {
+                        if(err) {
+                            console.log(err)
+                        } else {
+                            res.render('search', {
+                                admin: user.admin,
+                                username1: user.username,
+                                layout: 'main',
+                                data: mutipleMongooseToObject(data), 
+                            }
+                        )}
+                    })
+                } else {
+                    res.render('search', {
+                        layout: 'main',
+                        data: mutipleMongooseToObject(data)
+                    })
+                }
+            }
+        })
     }
-
 }
 module.exports = new SiteController();

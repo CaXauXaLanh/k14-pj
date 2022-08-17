@@ -1,243 +1,246 @@
-<div id="sticky_nav" class="header__nav">
-    <div class="wrapper">
-        <ul class="header__nav-list">
-        <li class="icon">
-            <a href="/">
-            <i class="fa-solid fa-house"></i>
-            </a>
-        </li>
-        <li>
-            <a href="/xa-hoi" title="Xã Hội">Xã Hội</a>
-        </li>
-        <li>
-            <a href="/the-thao" title="Thể Thao"
-            >Thể Thao</a
-            >
-        </li>
-        <li>
-            <a href="kinh-te" title="Kinh Doanh"
-            >Kinh Doanh</a
-            >
-        </li>
-        <li>
-            <a href="/van-hoa" title="Văn Hoá"
-            >Văn Hoá</a
-            >
-        </li>
-        <li>
-            <a
-            href="/the-gioi"
-            title="Thế giới"
-            >Thế giới</a
-            >
-        </li>
-        <li>
-            <i class="fa-solid fa-ellipsis"></i>
-        </li>
-        {{#if username1}}
-            {{>loggedIn}}
-        {{else}}
-            {{>notLogin}}
-        {{/if}}
-        </ul>
-    </div>
-    </div>
-
-<div class="banner">
-    <img src="image/banner.png" alt="">
+{{!-- <div id="sticky_nav" class="header__nav">
+  <div class="wrapper">
+    <ul class="header__nav-list">
+      <li class="icon">
+        <a href="/">
+          <i class="fa-solid fa-house"></i>
+        </a>
+      </li>
+      <li>
+        <a href="/xa-hoi" title="Xã Hội">Xã Hội</a>
+      </li>
+      <li>
+        <a href="/the-thao" title="Thể Thao">Thể Thao</a>
+      </li>
+      <li>
+        <a href="kinh-te" title="Kinh Doanh">Kinh Doanh</a>
+      </li>
+      <li>
+        <a href="/van-hoa" title="Văn Hoá">Văn Hoá</a>
+      </li>
+      <li>
+        <a href="/the-gioi" title="Thế giới">Thế giới</a>
+      </li>
+      <li>
+        <i class="fa-solid fa-ellipsis"></i>
+      </li>
+      {{#if username1}}
+        {{>loggedIn}}
+      {{else}}
+        {{>notLogin}}
+      {{/if}}
+    </ul>
+  </div>
 </div>
 
+<div class="banner">
+  <img src="image/banner.png" alt="" />
+</div> --}}
+  <div class="banner">
+    <img src="image/banner.png" alt="" />
+  </div>
 <!-- Body1 -->
 <div class="content">
-    <div class="content__left-wrapper">  
-        <div class="content__body-list">
-            <div class="content__body-item item1">
-                {{#with data1.[0]}}
-                    <a href="/{{tag}}/{{slug}}"><img src="{{image}}" alt=""></a>
-                    <a href="/{{tag}}/{{slug}}">{{title}}</a>
-                    <p>{{description}}</p>
-                {{/with}}
-            </div>
-            <div class="content__body-item item2">
-                {{#with data1.[1]}}
-                    <a href="/{{tag}}/{{slug}}"><img src="{{image}}" alt=""></a>
-                    <div>
-                        <a href="/{{tag}}/{{slug}}">{{title}}</a>
-                    </div>
-                {{/with}}
-            </div>
-        </div>
-
-        <div class="slider">
-            <div class="slider-nav">
-                <i class='bx bx-chevron-left btnLeft'></i>
-                <i class='bx bx-chevron-right btnRight'></i>
-            </div>
-
-            <div class="slider-box">
-                {{#each_from_to data1 2 7}}
-                <div class="box">
-                    <a href="/{{this.tag}}/{{this.slug}}"><img src="{{this.image}}" alt=""></a>
-                    <a href="/{{this.tag}}/{{this.slug}}"><p>{{this.title}}</p></a>
-                </div>
-                {{/each_from_to}}
-            </div>
-            <div style="text-align:center">
-                <span class="dot active" onclick="plusSlides(0)"></span>
-                <span class="dot" onclick="plusSlides(1)"></span>
-                <span class="dot" onclick="plusSlides(2)"></span>
-                <span class="dot" onclick="plusSlides(3)"></span>
-            </div>
-        </div>
-
-        <div class="horizontal">
-            {{#each_from_to data1 8 11}}
-            <ul class="horizontal__news-list">
-                <li class="horizontal__news-items">
-                    <a href="/{{this.tag}}/{{this.slug}}" class="horizontal__news-link">
-                        <img src="{{this.image}}" alt="" class="header__notify-img">
-                        <div class="horizontal__news-info">
-                            <span class="horizontal__news-name">{{this.title}}</span>
-                            <span class="horizontal__news-content">{{this.description}}</span>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-            {{/each_from_to}}
-        </div>
-    </div>
-    <div class="content__right-wrapper">
-        <div class="content__body-img">
-            <img src="image/banner1.png" alt="">
-            <img src="image/banner1.png" alt="">
-
-        </div>
+  <div class="content__left-wrapper">
+    <div class="content__body-list">
+      <div class="content__body-item item1">
+        {{#with data1.[0]}}
+          <a href="/{{tag}}/{{slug}}"><img src="{{image}}" alt="" /></a>
+          <a href="/{{tag}}/{{slug}}">{{title}}</a>
+          <p>{{description}}</p>
+        {{/with}}
+      </div>
+      <div class="content__body-item item2">
+        {{#with data1.[1]}}
+          <a href="/{{tag}}/{{slug}}"><img src="{{image}}" alt="" /></a>
+          <div>
+            <a href="/{{tag}}/{{slug}}">{{title}}</a>
+          </div>
+        {{/with}}
+      </div>
     </div>
 
+    <div class="slider">
+      <div class="slider-nav">
+        <i class="bx bx-chevron-left btnLeft"></i>
+        <i class="bx bx-chevron-right btnRight"></i>
+      </div>
+
+      <div class="slider-box">
+        {{#each_from_to data1 2 7}}
+          <div class="box">
+            <a href="/{{this.tag}}/{{this.slug}}"><img
+                src="{{this.image}}"
+                alt=""
+              /></a>
+            <a href="/{{this.tag}}/{{this.slug}}"><p>{{this.title}}</p></a>
+          </div>
+        {{/each_from_to}}
+      </div>
+      <div style="text-align:center">
+        <span class="dot active" onclick="plusSlides(0)"></span>
+        <span class="dot" onclick="plusSlides(1)"></span>
+        <span class="dot" onclick="plusSlides(2)"></span>
+        <span class="dot" onclick="plusSlides(3)"></span>
+      </div>
+    </div>
+
+    <div class="horizontal">
+      {{#each_from_to data1 8 11}}
+        <ul class="horizontal__news-list">
+          <li class="horizontal__news-items">
+            <a href="/{{this.tag}}/{{this.slug}}" class="horizontal__news-link">
+              <img src="{{this.image}}" alt="" class="header__notify-img" />
+              <div class="horizontal__news-info">
+                <span class="horizontal__news-name">{{this.title}}</span>
+                <span
+                  class="horizontal__news-content"
+                >{{this.description}}</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      {{/each_from_to}}
+    </div>
+  </div>
+  <div class="content__right-wrapper">
+    <div class="content__body-img">
+      <img src="image/banner1.png" alt="" />
+      <img src="image/banner1.png" alt="" />
+
+    </div>
+  </div>
 
 </div>
 <!-- Trend -->
 <div class="trend__wrapper">
-    <div class="trend__wrapper-left">
-        <div class="trend__news">
-            <div class="trend__news-header">
-                <div class="trend__news-header-tag"></div>
-                <h3 class="trend__news-header-name">Đáng Chú Ý</h3>
+  <div class="trend__wrapper-left">
+    <div class="trend__news">
+      <div class="trend__news-header">
+        <div class="trend__news-header-tag"></div>
+        <h3 class="trend__news-header-name">Đáng Chú Ý</h3>
+      </div>
+      <div class="trend__news-body">
+        {{#each_from_to data1 12 14}}
+          <div class="trend__news-body-list">
+            <div class="trend__news-body-img">
+              <a href="/{{this.tag}}/{{this.slug}}"><img
+                  src="{{this.image}}"
+                  alt=""
+                  width="220px"
+                  height="138px"
+                /></a>
             </div>
-            <div class="trend__news-body">
-                {{#each_from_to data1 12 14}}
-                    <div class="trend__news-body-list">
-                        <div class="trend__news-body-img">
-                            <a href="/{{this.tag}}/{{this.slug}}"><img src="{{this.image}}" alt="" width="220px" height="138px"></a>
-                        </div>
-                        <div class="trend__news-body-info">
-                            <a href="/{{this.tag}}/{{this.slug}}">
-                                <span class="trend__news-body-title">
-                                    {{this.title}}
-                                </span>
-                            </a>
-                            <div class="trend__news-body-views">
-                                <span class="trend__news-body-icon">
-                                    <i class="fa-solid fa-eye"></i>
-                                </span>
-                                <span class="trend__news-body-numbers">
-                                    200k
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                {{/each_from_to}}
+            <div class="trend__news-body-info">
+              <a href="/{{this.tag}}/{{this.slug}}">
+                <span class="trend__news-body-title">
+                  {{this.title}}
+                </span>
+              </a>
+              <div class="trend__news-body-views">
+                <span class="trend__news-body-icon">
+                  <i class="fa-solid fa-eye"></i>
+                </span>
+                <span class="trend__news-body-numbers">
+                  200k
+                </span>
+              </div>
             </div>
-        </div>
+          </div>
+        {{/each_from_to}}
+      </div>
     </div>
-    <div class="trend__wrapper-right">
-        <div class="trend__podcast">
-            <div class="trend__podcast-header">
-                <div class="trend__podcast-header-img">
-                    <img src="image/podcast_header.png" alt="">
-                </div>
-                <div class="trend__podcast-header-logo">
-                    <img src="image/podcast.svg" alt="">
-                </div>
-
-                <div class="trend__podcast-header-extend">
-                    <span class="trend__podcast-header-extend-name">
-                        Xem tất cả
-                    </span>
-                    <span class="trend__podcast-header-extend-icon">
-                        <i class="fa-solid fa-angle-right"></i>
-                    </span>
-                </div>
-            </div>
-            <div class="trend__podcast-body">
-                <div class="trend__poscast-body-1">
-                    <div class="trend__podcast-body1-img">
-                        <div class="trend__podcast-body1-icon">
-                            <i class="fa-solid fa-headphones"></i>
-                            <div class="trend__podcast-body1-iconname">
-                                Naked Love
-                            </div>
-                        </div>
-                        <div class="trend__podcast-body1-duration">
-                            <span>16:37</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="trend__podcast-body-title">
-                    Sơn Soho, Linh Keen cùng câu chuyện bước ra khỏi mối quan ...
-                </div>
-
-                <div class="trend__podcast-body-content">
-                    Biết là mối quan hệ tiêu cực mà sao cứ đâm đầu? Cùng lắng nghe hai khách mời Sơn Soho Linh
-                    Keen trả lời cho câu hỏi đau đầu này...
-                </div>
-
-                <div class="trend__podcast-body-small">
-                    <div class="trend__podcast-body-small-img">
-                        <div class="trend__podcast-body-small-icon">
-                            <i class="fa-solid fa-headphones"></i>
-                        </div>
-                    </div>
-                    <div class="trend__podcast-body-small-body">
-                        <div class="trend__podcast-body-small-title">
-                            From Nothing to Hot-thing
-                        </div>
-                        <div class="trend__podcast-body-small-content">
-                            Founder mô hình Mây Lang Thang: Ý tưởng xuất phát ...
-                        </div>
-                    </div>
-                </div>
-            </div>
+  </div>
+  <div class="trend__wrapper-right">
+    <div class="trend__podcast">
+      <div class="trend__podcast-header">
+        <div class="trend__podcast-header-img">
+          <img src="image/podcast_header.png" alt="" />
         </div>
+        <div class="trend__podcast-header-logo">
+          <img src="image/podcast.svg" alt="" />
+        </div>
+
+        <div class="trend__podcast-header-extend">
+          <span class="trend__podcast-header-extend-name">
+            Xem tất cả
+          </span>
+          <span class="trend__podcast-header-extend-icon">
+            <i class="fa-solid fa-angle-right"></i>
+          </span>
+        </div>
+      </div>
+      <div class="trend__podcast-body">
+        <div class="trend__poscast-body-1">
+          <div class="trend__podcast-body1-img">
+            <div class="trend__podcast-body1-icon">
+              <i class="fa-solid fa-headphones"></i>
+              <div class="trend__podcast-body1-iconname">
+                Naked Love
+              </div>
+            </div>
+            <div class="trend__podcast-body1-duration">
+              <span>16:37</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="trend__podcast-body-title">
+          Sơn Soho, Linh Keen cùng câu chuyện bước ra khỏi mối quan ...
+        </div>
+
+        <div class="trend__podcast-body-content">
+          Biết là mối quan hệ tiêu cực mà sao cứ đâm đầu? Cùng lắng nghe hai
+          khách mời Sơn Soho Linh Keen trả lời cho câu hỏi đau đầu này...
+        </div>
+
+        <div class="trend__podcast-body-small">
+          <div class="trend__podcast-body-small-img">
+            <div class="trend__podcast-body-small-icon">
+              <i class="fa-solid fa-headphones"></i>
+            </div>
+          </div>
+          <div class="trend__podcast-body-small-body">
+            <div class="trend__podcast-body-small-title">
+              From Nothing to Hot-thing
+            </div>
+            <div class="trend__podcast-body-small-content">
+              Founder mô hình Mây Lang Thang: Ý tưởng xuất phát ...
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
 <!-- Body2 -->
 <div class="content">
-    <div class="content__left-wrapper">
+  <div class="content__left-wrapper">
 
-        <div class="horizontal">
-            {{#each_from_to data1 15 17}}
-                <ul class="horizontal__news-list">
-                    <li class="horizontal__news-items">
-                        <a href="/{{this.tag}}/{{this.slug}}" class="horizontal__news-link">
-                            <img src="{{this.image}}" alt="" class="header__notify-img">
-                            <div class="horizontal__news-info">
-                                <span class="horizontal__news-name">{{this.title}}</span>
-                                <span class="horizontal__news-content">{{this.description}}</span>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            {{/each_from_to}}
-        </div>
+    <div class="horizontal">
+      {{#each_from_to data1 15 17}}
+        <ul class="horizontal__news-list">
+          <li class="horizontal__news-items">
+            <a href="/{{this.tag}}/{{this.slug}}" class="horizontal__news-link">
+              <img src="{{this.image}}" alt="" class="header__notify-img" />
+              <div class="horizontal__news-info">
+                <span class="horizontal__news-name">{{this.title}}</span>
+                <span
+                  class="horizontal__news-content"
+                >{{this.description}}</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      {{/each_from_to}}
     </div>
-    <div class="content__right-wrapper">
-        <div class="content__body-img">
-            <img src="image/banner1.png" alt="">
-            {{!-- <img src="image/banner1.png" alt=""> --}}
+  </div>
+  <div class="content__right-wrapper">
+    <div class="content__body-img">
+      <img src="image/banner1.png" alt="" />
+      {{! <img src="image/banner1.png" alt=""> }}
 
-        </div>
     </div>
+  </div>
 </div>

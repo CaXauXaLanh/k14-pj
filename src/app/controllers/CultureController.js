@@ -1,8 +1,9 @@
-
 const {Business} = require('../models/News')
-
+const User = require('../models/User')
 const {mutipleMongooseToObject} = require('../../util/mongoose')
 const {mongooseToObject} = require('../../util/mongoose')
+const jwt = require('jsonwebtoken')
+
 
 class CultureController  {
     //[GET] /van-hoa/:slug
@@ -15,11 +16,31 @@ class CultureController  {
                     if(err){
                         console.log(err)
                     }else{
-                        res.render('news/show', {
-                            layout: 'news',
-                            data1: mongooseToObject(data1), 
-                            data2: mutipleMongooseToObject(data2)
-                        })
+                        if (req.cookies.accessToken) {
+                            const cookie = req.cookies.accessToken
+                            const decode = jwt.verify(cookie, 'secretkey')
+                            const userId = decode.id
+                            User.findOne({_id: userId}, function(err, user) {
+                                if(err) {
+                                    console.log(err)
+                                } else {
+                                    res.render('news/show', {
+                                        admin: user.admin,
+                                        username1: user.username,
+                                        layout: 'news',
+                                        data1: mongooseToObject(data1), 
+                                        data2: mutipleMongooseToObject(data2)
+                                    }
+                                )}
+                            })
+                        } else {
+                            res.render('news/show', {
+                                layout: 'news',
+                                data1: mongooseToObject(data1), 
+                                data2: mutipleMongooseToObject(data2)
+                            })
+                        }
+                        
                     }
                 })
             }
@@ -40,13 +61,35 @@ class CultureController  {
                             if(err) {
                                 console.log(err)
                             }else{
-                                res.render('tag/culture', {
-                                    title: "Văn hoá",
-                                    layout: 'tag',
-                                    data1: mutipleMongooseToObject(data1),
-                                    data2: mutipleMongooseToObject(data2),
-                                    data3: mutipleMongooseToObject(data3),
-                                })
+                                if (req.cookies.accessToken) {
+                                    const cookie = req.cookies.accessToken
+                                    const decode = jwt.verify(cookie, 'secretkey')
+                                    const userId = decode.id
+                                    User.findOne({_id: userId}, function(err, user) {
+                                        if(err) {
+                                            console.log(err)
+                                        } else {
+                                            res.render('tag/tagPage', {
+                                                admin: user.admin,
+                                                username1: user.username,
+                                                title: 'Văn hoá',
+                                                layout: 'tag',
+                                                data1: mutipleMongooseToObject(data1),
+                                                data2: mutipleMongooseToObject(data2),
+                                                data3: mutipleMongooseToObject(data3),
+                                            }
+                                        )}
+                                    })
+                                } else {
+                                    res.render('tag/tagPage', {
+                                        title: "Văn hoá",
+                                        layout: 'tag',
+                                        data1: mutipleMongooseToObject(data1),
+                                        data2: mutipleMongooseToObject(data2),
+                                        data3: mutipleMongooseToObject(data3),
+                                    })
+                                }
+                                
                             }
                         })
                     }

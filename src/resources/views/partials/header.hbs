@@ -1,54 +1,90 @@
 <header class="header">
-<div class="header__star">
+  <div class="header__star">
     <div class="wrapper flex-box">
-    <ul class="header__star-list flex-box">
+      <ul class="header__star-list flex-box">
         <li class="header__star-item flex-box">
-        <i class="fa-solid fa-star"></i>
-        <a href="#">SEA GAME31</a>
+          <i class="fa-solid fa-star"></i>
+          <a href="#">SEA GAME31</a>
         </li>
 
         <li class="header__star-item">
-        <i class="fa-solid fa-star"></i>
-        <a href="#">EMAGAZINE</a>
+          <i class="fa-solid fa-star"></i>
+          <a href="#">EMAGAZINE</a>
         </li>
 
         <li class="header__star-item">
-        <i class="fa-solid fa-star"></i>
-        <a href="#">PODCAST</a>
+          <i class="fa-solid fa-star"></i>
+          <a href="#">PODCAST</a>
         </li>
-    </ul>
+      </ul>
 
-    <div class="header__star-search flex-box">
+      <div class="header__star-search flex-box">
         <form action="/tim-kiem" method="GET">
-            <input type="header__text" placeholder="Tìm kiếm..." id = "name" name="name"/>
-            <button class="fa-solid fa-magnifying-glass" type="submmit"></button>
-            {{!-- <i class="fa-solid fa-magnifying-glass"></i> --}}
+          <input
+            type="header__text"
+            placeholder="Tìm kiếm..."
+            id="name"
+            name="name"
+          />
+          <button class="fa-solid fa-magnifying-glass" type="submmit"></button>
+          {{! <i class="fa-solid fa-magnifying-glass"></i> }}
         </form>
-        
-    </div>
-    </div>
-</div>
 
-<nav class="nav">
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav">
     <div class="header__tag">
-    <div class="wrapper">
+      <div class="wrapper">
         <a href="/">
-            <img
-            src="/image/news_logo.png"
-            alt=""
-            class="header__tag-logo"/>
+          <img src="/image/news_logo.png" alt="" class="header__tag-logo" />
         </a>
-        
 
         <ul class="header__tag-list flex-box">
-        <i class="fa-solid fa-arrow-trend-up"></i>
-        <li><a href="">#U23 Việt Nam vô địch SEA Games 31</a></li>
-        <li><a href="">#LHP Cannes 2022</a></li>
-        <li><a href="">#SEA Games 31</a></li>
+          <i class="fa-solid fa-arrow-trend-up"></i>
+          <li><a href="">#U23 Việt Nam vô địch SEA Games 31</a></li>
+          <li><a href="">#LHP Cannes 2022</a></li>
+          <li><a href="">#SEA Games 31</a></li>
         </ul>
-    </div>
+      </div>
     </div>
 
-    
-</nav>
+  </nav>
+  <div id="sticky_nav" class="header__nav">
+    <div class="wrapper">
+      <ul class="header__nav-list">
+        <li class="icon">
+          <a href="/">
+            <i class="fa-solid fa-house"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/xa-hoi" title="Xã Hội">Xã Hội</a>
+        </li>
+        <li>
+          <a href="/the-thao" title="Thể Thao">Thể Thao</a>
+        </li>
+        <li>
+          <a href="kinh-te" title="Kinh Doanh">Kinh Doanh</a>
+        </li>
+        <li>
+          <a href="/van-hoa" title="Văn Hoá">Văn Hoá</a>
+        </li>
+        <li>
+          <a href="/the-gioi" title="Thế giới">Thế giới</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-ellipsis"></i>
+        </li>
+        {{#if username1}}
+          {{>loggedIn}}
+        {{else}}
+          {{>notLogin}}
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+
+
 </header>
