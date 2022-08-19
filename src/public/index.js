@@ -44,3 +44,17 @@ BTN__SWITCH_LOGIN.addEventListener("click", () => {
   modal__container2.classList.add("show");
   modal__container.classList.remove("show");
 });
+//click-out
+document
+  .querySelectorAll(".modal__overlay")[1]
+  .addEventListener("click", () => {
+    modal__container.classList.remove("show");
+    modal__container2.classList.remove("show");
+  });
+
+document
+  .querySelectorAll(".modal__overlay")[0]
+  .addEventListener("click", () => {
+    modal__container.classList.remove("show");
+    modal__container2.classList.remove("show");
+  });
