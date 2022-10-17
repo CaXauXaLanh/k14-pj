@@ -2,7 +2,8 @@
 
 1.1. Trang chủ.
 Nơi hiển thị những bài báo mới cập nhật nóng hổi, mang đến tin tức mới nhất cho người đọc, người đọc có thể truy cập bài báo vầ đọc trực tiếp mà không cần đăng nhập.
-	
+
+[![alt text](https://github.com/TuiKhumBikCode/Picture/blob/main/CDCS/image.jpg?raw=true)](https://github.com/TuiKhumBikCode/Picture/blob/main/CDCS/article.png)
  
 Ảnh 3.1: Trang chủ website.
 
