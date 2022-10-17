@@ -1,3 +1,5 @@
+Demo: https://drive.google.com/file/d/1EZX-_XEXCkhK2G8mZEmvj5H3vjJIzub7/view?usp=sharing
+
 1. Giao diện người dùng
 
 1.1. Trang chủ.
@@ -62,6 +64,4 @@ Tương tự với quản lí người dùng khi mà chỉ quản trị viên c�
  ![article](https://user-images.githubusercontent.com/103924147/196166034-b45cfdd2-14f0-4d81-8727-1bfc8b7fa7c6.png)
 
  
-                                            Ảnh 3.7: Ảnh trang quản lý bài viết.
-                                            
-Demo: https://drive.google.com/file/d/1EZX-_XEXCkhK2G8mZEmvj5H3vjJIzub7/view?usp=sharing
+                                            Ảnh 3.7: Ảnh trang quản lý bài viết.                                           
