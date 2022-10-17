@@ -63,3 +63,5 @@ Tương tự với quản lí người dùng khi mà chỉ quản trị viên c�
 
  
                                             Ảnh 3.7: Ảnh trang quản lý bài viết.
+                                            
+Demo: https://drive.google.com/file/d/1EZX-_XEXCkhK2G8mZEmvj5H3vjJIzub7/view?usp=sharing
