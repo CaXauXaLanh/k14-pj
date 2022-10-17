@@ -5,7 +5,7 @@ Nơi hiển thị những bài báo mới cập nhật nóng hổi, mang đến 
 
 ![homepage](https://user-images.githubusercontent.com/103924147/196165201-c8502713-e81d-4b32-bea1-564079d47094.png)
  
-                                                            Ảnh 3.1: Trang chủ website.
+                                                  Ảnh 3.1: Trang chủ website.
 
 
 1.2. Trang loại tin.
